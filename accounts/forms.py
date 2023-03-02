@@ -23,3 +23,6 @@ class RegisterForm(FlaskForm):
         return True
     
     
+class LoginForm(FlaskForm):
+    email = EmailField("Email", validators=[DataRequired(), Email(message="Please enter a valid email address"), Length(max=255)])
+    password = PasswordField("Password", validators=[DataRequired()])
